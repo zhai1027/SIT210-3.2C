@@ -1,0 +1,19 @@
+#define Standard_Value 1000
+
+void setup() {}
+
+void loop() 
+{
+    int Lumen = random(600,3000);
+    
+    if (Lumen > Standard_Value)
+    {
+        Particle.publish("Bright",String(Lumen));
+        delay(30000);
+    }
+    else
+    {
+        Particle.publish("Dark",String(Lumen));
+        delay(30000);
+    }
+}
